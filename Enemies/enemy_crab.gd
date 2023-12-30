@@ -55,7 +55,7 @@ func enemy_walk(delta: float):
 	if abs(position.x - current_point.x) > 0.5:
 		velocity.x = direction.x * speed * delta
 		current_state = State.Walk
-		print("move")
+		#print("move")
 	else:
 		current_point_position += 1
 		
@@ -70,7 +70,7 @@ func enemy_walk(delta: float):
 			direction = Vector2.LEFT
 		can_walk = false
 		timer.start()
-		print("stop")
+		#print("stop")
 	$AnimatedSprite2D.flip_h = direction.x > 0
 
 

@@ -4,28 +4,30 @@
 [ext_resource type="Texture2D" uid="uid://dkrsqjxlvjs87" path="res://environment/middleground.png" id="2_2jo62"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
-offset = Vector2(0, -48)
-transform = Transform2D(1, 0, 0, 1, 0, -48)
 
 [node name="BackgroundParallaxLayer" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(480, 0)
+motion_mirroring = Vector2(720, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="BackgroundParallaxLayer"]
-position = Vector2(120, -34)
+position = Vector2(180, 132)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_vk415")
 
 [node name="Sprite2D2" type="Sprite2D" parent="BackgroundParallaxLayer"]
-position = Vector2(360, -34)
+position = Vector2(540, 132)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_vk415")
 
 [node name="MiddlegroundParallaxLayer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.9, 1)
-motion_mirroring = Vector2(544, 0)
+motion_mirroring = Vector2(816, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="MiddlegroundParallaxLayer"]
-position = Vector2(136, -34)
+position = Vector2(204, 132)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_2jo62")
 
 [node name="Sprite2D2" type="Sprite2D" parent="MiddlegroundParallaxLayer"]
-position = Vector2(408, -34)
+position = Vector2(612, 132)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_2jo62")
