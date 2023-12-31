@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var max_horizontal_speed: float = 300
 @export var slow_down_speed: int = 100
 @export var bullet: PackedScene = preload("res://player/bullet.tscn")
+@export var death_effect: PackedScene = preload("res://player/player_death_effect/player_death_effect.tscn")
 
 @export var jump: float = -400.0
 @export var jump_horizontal_speed: int = 1000
@@ -39,6 +40,13 @@ func _physics_process(delta: float):
 
 func input_movement() -> float:
 	return Input.get_axis("ui_left", "ui_right")
+
+
+func player_death():
+	var death_effect_instance = death_effect.instantiate() as Node2D
+	death_effect_instance.global_position = global_position
+	get_parent().add_child(death_effect_instance)
+	queue_free() 
 
 
 func player_shooting(delta: float):
@@ -107,3 +115,6 @@ func _on_hurtbox_body_entered(body: Node2D):
 		print("enemy entered ", body.damage_amount)
 		HealthManager.decrease_health(body.damage_amount)
 		hit_animation_player.play("Hit")
+		
+	if HealthManager.current_health == 0:
+		player_death()
