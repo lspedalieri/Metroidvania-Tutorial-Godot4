@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1slrhhh3dha6"]
+[gd_scene load_steps=5 format=3 uid="uid://d1slrhhh3dha6"]
 
 [ext_resource type="PackedScene" uid="uid://bl4a7a8x6ujy3" path="res://levels/base_level.tscn" id="1_y8eef"]
 [ext_resource type="PackedScene" uid="uid://de14atpb7kgr7" path="res://environment/parallax_background.tscn" id="2_qn08v"]
 [ext_resource type="PackedScene" uid="uid://cluqar8su7vxh" path="res://Enemies/crab/enemy_crab.tscn" id="3_goap8"]
+[ext_resource type="PackedScene" uid="uid://dfkg8vjis6wx4" path="res://pickups/health_pickups/health_pickup.tscn" id="4_8xwkp"]
 
 [node name="Level1" instance=ExtResource("1_y8eef")]
 
@@ -16,16 +17,21 @@ layer_0/tile_data = PackedInt32Array(-131072, 917504, 7, -65536, 983040, 8, -131
 layer_1/tile_data = PackedInt32Array(-327589, 131073, 6, -262053, 131073, 7, -196517, 131073, 8, -327588, 196609, 6, -262052, 196609, 7, -196516, 196609, 8, -327587, 262145, 6, -262051, 262145, 7, -196515, 262145, 8, -327606, 131073, 6, -262070, 131073, 7, -196534, 131073, 8, -327605, 196609, 6, -262069, 196609, 7, -196533, 196609, 8, -327604, 262145, 6, -262068, 262145, 7, -196532, 262145, 8, -262062, 393217, 6, -196526, 393217, 7, -130990, 393217, 8, -262061, 458753, 6, -196525, 458753, 7, -130989, 458753, 8, -262060, 524289, 6, -196524, 524289, 7, -130988, 524289, 8, -851913, 655360, 6, -786377, 655360, 7, -851912, 720896, 6, -786376, 720896, 7, -851909, 1376256, 8, -786373, 1376256, 9, -851908, 1441792, 8, -786372, 1441792, 9, -851918, 393217, 6, -786382, 393217, 7, -720846, 393217, 8, -851917, 458753, 6, -786381, 458753, 7, -720845, 458753, 8, -851916, 524289, 6, -786380, 524289, 7, -720844, 524289, 8, -262106, 393217, 6, -196570, 393217, 7, -131034, 393217, 8, -262105, 458753, 6, -196569, 458753, 7, -131033, 458753, 8, -262104, 524289, 6, -196568, 524289, 7, -131032, 524289, 8)
 layer_2/tile_data = PackedInt32Array(-196599, 65536, 6, -131063, 65536, 7, -65527, 65536, 8, -196584, 65536, 6, -131048, 65536, 7, -65512, 65536, 8, -196607, 65536, 6, -131071, 65536, 7, -65535, 65536, 8, -393149, 1179648, 7, -327613, 1179648, 8, -262077, 1179648, 9, -196541, 1179648, 10, -393148, 1245184, 7, -327612, 1245184, 8, -262076, 1245184, 9, -196540, 1245184, 10, -65433, 262146, 1, 103, 262146, 2, -65432, 327682, 1, 104, 327682, 2, -1048576, 458754, 4, -1048575, 524290, 4, -983040, 458754, 5, -917504, 458754, 5, -851968, 458754, 5, -786432, 458754, 5, -655360, 458754, 6, -655359, 524290, 6, -720896, 458754, 5, -655302, 262146, 4, -589766, 262146, 5, -524230, 262146, 6, -655301, 327682, 4, -589765, 327682, 5, -524229, 327682, 6)
 
-[node name="Player" parent="." index="2"]
+[node name="Pickups" type="Node" parent="." index="2"]
+
+[node name="HealthPickup" parent="Pickups" index="0" instance=ExtResource("4_8xwkp")]
+position = Vector2(507, -129)
+
+[node name="HealthPickup2" parent="Pickups" index="1" instance=ExtResource("4_8xwkp")]
+position = Vector2(331, -163)
+
+[node name="HealthPickup3" parent="Pickups" index="2" instance=ExtResource("4_8xwkp")]
+position = Vector2(413, -51)
+
+[node name="Player" parent="." index="3"]
 position = Vector2(48, -32)
 
-[node name="Camera2D2" parent="Player" index="4"]
-limit_left = -20
-limit_top = -370
-limit_right = 1700
-limit_bottom = 50
-
-[node name="Enemies" type="Node" parent="." index="3"]
+[node name="Enemies" type="Node" parent="." index="4"]
 
 [node name="EnemyCrab" parent="Enemies" index="0" instance=ExtResource("3_goap8")]
 position = Vector2(232, -32)

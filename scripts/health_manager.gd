@@ -25,5 +25,7 @@ func increase_health(health_amount: int):
 	
 	if current_health > max_health:
 		current_health = max_health
-		
+		return false
 	print("increase health")
+	on_health_changed.emit(current_health)
+	return true

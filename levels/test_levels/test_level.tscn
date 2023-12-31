@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://gpfmnv351shk"]
+[gd_scene load_steps=4 format=3 uid="uid://gpfmnv351shk"]
 
 [ext_resource type="PackedScene" uid="uid://bl4a7a8x6ujy3" path="res://levels/base_level.tscn" id="1_w3yx2"]
 [ext_resource type="PackedScene" uid="uid://de14atpb7kgr7" path="res://environment/parallax_background.tscn" id="2_bmj17"]
 [ext_resource type="PackedScene" uid="uid://cluqar8su7vxh" path="res://Enemies/crab/enemy_crab.tscn" id="4_jsq10"]
-[ext_resource type="PackedScene" uid="uid://bq752lvib2h21" path="res://ui/game_screen.tscn" id="5_qc0b2"]
 
 [node name="TestLevel" instance=ExtResource("1_w3yx2")]
 
@@ -29,5 +28,3 @@ position = Vector2(105, -40)
 
 [node name="Point2" type="Marker2D" parent="EnemyCrab/PatrolPoints2" index="1"]
 position = Vector2(329, -40)
-
-[node name="GameScreen" parent="." index="4" instance=ExtResource("5_qc0b2")]
