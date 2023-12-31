@@ -11,6 +11,7 @@ extends CharacterBody2D
 @export var jump_horizontal_speed: int = 1000
 @export var max_jump_horizontal_speed: int = 300
 @onready var muzzle: Marker2D = $muzzle
+@onready var hit_animation_player = $HitAnimationPlayer
 
 enum State {Idle, Run, Jump, Shoot}
 
@@ -105,3 +106,4 @@ func _on_hurtbox_body_entered(body: Node2D):
 	if body.is_in_group("Enemies"):
 		print("enemy entered ", body.damage_amount)
 		HealthManager.decrease_health(body.damage_amount)
+		hit_animation_player.play("Hit")
