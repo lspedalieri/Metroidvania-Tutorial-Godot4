@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7lkpdplsu47w"
-path="res://.godot/imported/crab-walk-3.png-77301399723bc531598ec867e6f8c3ae.ctex"
+uid="uid://d17gt5yilklwb"
+path="res://.godot/imported/crab-idle-2.png-1ea09f8ede5c56c25d52f528c77cb73c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/crab-walk/crab-walk-3.png"
-dest_files=["res://.godot/imported/crab-walk-3.png-77301399723bc531598ec867e6f8c3ae.ctex"]
+source_file="res://Enemies/crab/crab-idle/crab-idle-2.png"
+dest_files=["res://.godot/imported/crab-idle-2.png-1ea09f8ede5c56c25d52f528c77cb73c.ctex"]
 
 [params]
 

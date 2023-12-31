@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5uwpcl4bcwll"
-path="res://.godot/imported/crab-idle-1.png-d016e336a45516b72947e6230d9bb666.ctex"
+uid="uid://b7yym6ctuodwd"
+path="res://.godot/imported/dog-idle.png-4b3b58ffc10dc266fe6e4f8774d436d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/crab-idle/crab-idle-1.png"
-dest_files=["res://.godot/imported/crab-idle-1.png-d016e336a45516b72947e6230d9bb666.ctex"]
+source_file="res://Enemies/dog-idle.png"
+dest_files=["res://.godot/imported/dog-idle.png-4b3b58ffc10dc266fe6e4f8774d436d1.ctex"]
 
 [params]
 

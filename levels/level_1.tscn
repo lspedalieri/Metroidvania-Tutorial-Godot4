@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bl4a7a8x6ujy3" path="res://levels/base_level.tscn" id="1_y8eef"]
 [ext_resource type="PackedScene" uid="uid://de14atpb7kgr7" path="res://environment/parallax_background.tscn" id="2_qn08v"]
-[ext_resource type="PackedScene" uid="uid://cluqar8su7vxh" path="res://Enemies/enemy_crab.tscn" id="3_goap8"]
+[ext_resource type="PackedScene" uid="uid://cluqar8su7vxh" path="res://Enemies/crab/enemy_crab.tscn" id="3_goap8"]
 
 [node name="Level1" instance=ExtResource("1_y8eef")]
 
@@ -20,8 +20,10 @@ layer_2/tile_data = PackedInt32Array(-196599, 65536, 6, -131063, 65536, 7, -6552
 position = Vector2(48, -32)
 
 [node name="Camera2D2" parent="Player" index="3"]
-limit_top = -300
+limit_left = -20
+limit_top = -370
 limit_right = 1700
+limit_bottom = 50
 
 [node name="Enemies" type="Node" parent="." index="3"]
 
