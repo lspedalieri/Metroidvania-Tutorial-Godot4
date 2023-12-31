@@ -33,7 +33,7 @@ func _physics_process(delta: float):
 	player_shooting(delta)
 	move_and_slide()
 	player_animation()
-	print("State: ", State.keys()[current_state])
+	#print("State: ", State.keys()[current_state])
 
 
 func input_movement() -> float:
