@@ -26,11 +26,12 @@ func on_physics_process(delta: float):
 	character_body_2d.move_and_slide()
 
 func enter():
-	print("entered in attack state")
+	#print("entered in attack state")
 	player = get_tree().get_nodes_in_group("Player")[0] as CharacterBody2D
 	max_speed = speed + 20
 
 
 func exit():
-	print("exited from attack state")
+	#print("exited from attack state")
+	pass
 

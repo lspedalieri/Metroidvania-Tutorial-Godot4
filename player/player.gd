@@ -99,3 +99,9 @@ func player_animation() -> void:
 		animated_sprite_2d.play("jump")
 	elif current_state == State.Shoot:
 		animated_sprite_2d.play("run_shoot")
+
+
+func _on_hurtbox_body_entered(body: Node2D):
+	if body.is_in_group("Enemies"):
+		print("enemy entered ", body.damage_amount)
+		HealthManager.decrease_health(body.damage_amount)

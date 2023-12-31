@@ -19,7 +19,7 @@ layer_2/tile_data = PackedInt32Array(-196599, 65536, 6, -131063, 65536, 7, -6552
 [node name="Player" parent="." index="2"]
 position = Vector2(48, -32)
 
-[node name="Camera2D2" parent="Player" index="3"]
+[node name="Camera2D2" parent="Player" index="4"]
 limit_left = -20
 limit_top = -370
 limit_right = 1700
@@ -27,15 +27,14 @@ limit_bottom = 50
 
 [node name="Enemies" type="Node" parent="." index="3"]
 
-[node name="EnemyCrab" parent="Enemies" index="0" node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_goap8")]
+[node name="EnemyCrab" parent="Enemies" index="0" instance=ExtResource("3_goap8")]
 position = Vector2(232, -32)
-patrol_points = NodePath("PatrolPoints")
 
-[node name="PatrolPoints" type="Node2D" parent="Enemies/EnemyCrab" index="3"]
+[node name="PatrolPoints2" type="Node2D" parent="Enemies/EnemyCrab" index="3"]
 position = Vector2(-193, 32)
 
-[node name="Point1" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="0"]
+[node name="Point1" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints2" index="0"]
 position = Vector2(105, -40)
 
-[node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="1"]
+[node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints2" index="1"]
 position = Vector2(329, -40)

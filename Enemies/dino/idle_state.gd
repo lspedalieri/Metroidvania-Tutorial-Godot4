@@ -9,18 +9,18 @@ func on_process(delta: float):
 
 
 func on_physics_process(delta: float):
-	print("breaking")
+	#print("breaking")
 	character_body_2d.velocity.x = move_toward(character_body_2d.velocity.x, 0, slow_down_speed * delta)
 	animated_sprite_2d.play("idle")
 	character_body_2d.move_and_slide()
 
 
 func enter():
-	print("entered in idle state")
+	#print("entered in idle state")
 	pass
 
 
 func exit():
-	print("exited from idle state")
+	#print("exited from idle state")
 	pass
 

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var speed: int = 1500
 @export var wait_time: int = 3
 @export var health_amount: int = 3
+@export var damage_amount: int = 1
 @export var bullet_impact_effect: PackedScene = preload("res://player/enemy_death_effect.tscn")
 
 @onready var timer: Timer = $Timer

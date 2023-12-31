@@ -53,8 +53,9 @@ radius = 13.0384
 [sub_resource type="CircleShape2D" id="CircleShape2D_hn2et"]
 radius = 14.0
 
-[node name="EnemyCrab" type="CharacterBody2D"]
+[node name="EnemyCrab" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_7jy4a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

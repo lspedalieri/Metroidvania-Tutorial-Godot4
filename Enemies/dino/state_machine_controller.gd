@@ -5,11 +5,11 @@ extends Node
 
 func _on_attack_area_2d_body_entered(body):
 	if body.is_in_group("Player"):
-		print("calling attack state")
+		#print("calling attack state")
 		node_finite_state_machine.transition_to("attack")
 
 
 func _on_attack_area_2d_body_exited(body):
 	if body.is_in_group("Player"):
-		print("calling idle state")
+		#print("calling idle state")
 		node_finite_state_machine.transition_to("idle")

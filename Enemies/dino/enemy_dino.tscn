@@ -108,7 +108,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_yg8mi"]
 radius = 201.01
 
-[node name="EnemyDino" type="CharacterBody2D"]
+[node name="EnemyDino" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -26,7 +26,7 @@ func _physics_process(delta):
 	if current_node_state:
 		current_node_state.on_physics_process(delta)
 		
-	print("Current Enemy State: ", current_node_state.name.to_lower())
+	#print("Current Enemy State: ", current_node_state.name.to_lower())
 
 
 func transition_to(node_state_name: String):
@@ -39,10 +39,10 @@ func transition_to(node_state_name: String):
 		return
 	
 	if current_node_state:
-		print("exiting from ", current_node_state, " state")
+		#print("exiting from ", current_node_state, " state")
 		current_node_state.exit()
 	
 	new_node_state.enter()
-	print("entering in ", new_node_state, " state")
+	#print("entering in ", new_node_state, " state")
 	current_node_state = new_node_state
 	current_node_state_name = new_node_state.name.to_lower()
