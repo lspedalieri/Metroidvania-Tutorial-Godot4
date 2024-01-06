@@ -28,6 +28,11 @@ position = Vector2(208, -27)
 [node name="BlueCoin3" parent="Collectibles/BlueCoins" index="2" instance=ExtResource("3_3w50b")]
 position = Vector2(257, -27)
 
+[node name="GreenDiamonds" type="Node" parent="Collectibles" index="1"]
+
+[node name="GreenDiamond" parent="Collectibles/GreenDiamonds" index="0" instance=ExtResource("5_5ro8e")]
+position = Vector2(309, -27)
+
 [node name="Player" parent="." index="3"]
 position = Vector2(67, -3)
 
@@ -43,6 +48,3 @@ position = Vector2(105, -40)
 
 [node name="Point2" type="Marker2D" parent="EnemyCrab/PatrolPoints2" index="1"]
 position = Vector2(329, -40)
-
-[node name="GreenDiamond" parent="." index="7" instance=ExtResource("5_5ro8e")]
-position = Vector2(309, -27)
