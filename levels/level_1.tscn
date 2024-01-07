@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1slrhhh3dha6"]
+[gd_scene load_steps=7 format=3 uid="uid://d1slrhhh3dha6"]
 
 [ext_resource type="PackedScene" uid="uid://bl4a7a8x6ujy3" path="res://levels/base_level.tscn" id="1_y8eef"]
 [ext_resource type="PackedScene" uid="uid://de14atpb7kgr7" path="res://environment/parallax_background.tscn" id="2_qn08v"]
 [ext_resource type="PackedScene" uid="uid://cluqar8su7vxh" path="res://Enemies/crab/enemy_crab.tscn" id="3_goap8"]
+[ext_resource type="PackedScene" uid="uid://degmiepatnxqi" path="res://pickups/collectibles/blue_coin/blue_coin.tscn" id="4_3dvd2"]
 [ext_resource type="PackedScene" uid="uid://dfkg8vjis6wx4" path="res://pickups/health_pickups/health_pickup.tscn" id="4_8xwkp"]
+[ext_resource type="PackedScene" uid="uid://bp56iggj7uvq5" path="res://pickups/collectibles/green_diamond/green_diamond.tscn" id="5_lmsui"]
 
 [node name="Level1" instance=ExtResource("1_y8eef")]
 
@@ -22,25 +24,44 @@ layer_2/tile_data = PackedInt32Array(-196599, 65536, 6, -131063, 65536, 7, -6552
 [node name="HealthPickup" parent="Pickups" index="0" instance=ExtResource("4_8xwkp")]
 position = Vector2(507, -129)
 
-[node name="HealthPickup2" parent="Pickups" index="1" instance=ExtResource("4_8xwkp")]
-position = Vector2(331, -163)
-
-[node name="HealthPickup3" parent="Pickups" index="2" instance=ExtResource("4_8xwkp")]
+[node name="HealthPickup3" parent="Pickups" index="1" instance=ExtResource("4_8xwkp")]
 position = Vector2(413, -51)
 
-[node name="Player" parent="." index="3"]
+[node name="Collectibles" type="Node" parent="." index="3"]
+
+[node name="BlueCoins" type="Node" parent="Collectibles" index="0"]
+
+[node name="BlueCoin" parent="Collectibles/BlueCoins" index="0" instance=ExtResource("4_3dvd2")]
+position = Vector2(155, -27)
+
+[node name="BlueCoin2" parent="Collectibles/BlueCoins" index="1" instance=ExtResource("4_3dvd2")]
+position = Vector2(98, -171)
+
+[node name="BlueCoin3" parent="Collectibles/BlueCoins" index="2" instance=ExtResource("4_3dvd2")]
+position = Vector2(229, -170)
+
+[node name="GreenDiamonds" type="Node" parent="Collectibles" index="1"]
+
+[node name="GreenDiamond" parent="Collectibles/GreenDiamonds" index="0" instance=ExtResource("5_lmsui")]
+position = Vector2(41, -170)
+
+[node name="Player" parent="." index="4"]
 position = Vector2(48, -32)
 
-[node name="Enemies" type="Node" parent="." index="4"]
+[node name="Enemies" type="Node" parent="." index="5"]
 
-[node name="EnemyCrab" parent="Enemies" index="0" instance=ExtResource("3_goap8")]
-position = Vector2(232, -32)
+[node name="EnemyCrab" parent="Enemies" index="0" node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_goap8")]
+position = Vector2(178, -146)
+patrol_points = NodePath("PatrolPoints")
 
-[node name="PatrolPoints2" type="Node2D" parent="Enemies/EnemyCrab" index="3"]
-position = Vector2(-193, 32)
+[node name="PatrolPoints" type="Node" parent="Enemies/EnemyCrab" index="3"]
 
-[node name="Point1" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints2" index="0"]
+[node name="Point1" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="0"]
 position = Vector2(105, -40)
 
-[node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints2" index="1"]
+[node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="1"]
 position = Vector2(329, -40)
+
+[node name="PlayerCamera" parent="." index="6"]
+smoothing_enabled = true
+smoothing_distance = 2
