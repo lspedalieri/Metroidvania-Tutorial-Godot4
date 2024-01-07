@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5i80iq4tcot4" path="res://ui/crab-walk-1.png" id="4_a3unp"]
 
 [node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
 layer = 2
 script = ExtResource("1_ntomq")
 

@@ -9,6 +9,9 @@ func _ready():
 
 
 func start_game():
+	if get_tree().paused:
+		continue_game()
+		return
 	transition_to_scene(level_1.resource_path)
 
 

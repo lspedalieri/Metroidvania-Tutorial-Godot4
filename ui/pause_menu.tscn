@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4gnn7ea7qr4i"]
+[gd_scene load_steps=6 format=3 uid="uid://b3jd3gowglgaw"]
 
 [ext_resource type="Texture2D" uid="uid://4kb07lo3007c" path="res://ui/environment-preview.png" id="1_1ce3t"]
 [ext_resource type="Script" path="res://ui/pause_menu_screen.gd" id="1_v1iyx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5i80iq4tcot4" path="res://ui/crab-walk-1.png" id="4_ejtsa"]
 
 [node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
 layer = 2
 script = ExtResource("1_v1iyx")
 

@@ -14,5 +14,5 @@ func _on_main_menu_pressed():
 
 func _on_continue_pressed():
 	print("on main menu")
-	GameManager.main_menu()
+	GameManager.continue_game()
 	queue_free()
