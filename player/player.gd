@@ -13,11 +13,13 @@ extends CharacterBody2D
 @export var max_jump_horizontal_speed: int = 300
 @onready var muzzle: Marker2D = $muzzle
 @onready var hit_animation_player = $HitAnimationPlayer
+@export var jump_count: = 2
 
 enum State {Idle, Run, Jump, Shoot}
 
 var current_state: State
 var muzzle_position: Vector2
+var current_jump_count: int
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -90,9 +92,19 @@ func player_run(delta: float) -> void:
 		animated_sprite_2d.flip_h = true if velocity.x < 0 else false
 
 func player_jump(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
+	var jump_input: bool = Input.is_action_just_pressed("ui_accept")
+	
+	if is_on_floor() and Input.is_action_just_pressed("ui_accept"):
+		current_jump_count = 0
 		velocity.y = jump
+		current_jump_count += 1
 		current_state = State.Jump
+		
+	if !is_on_floor() and jump_input and current_jump_count < jump_count:
+		velocity.y = jump
+		current_jump_count += 1
+		current_state = State.Jump
+		
 	if !is_on_floor() and current_state == State.Jump:
 		var direction = input_movement()
 		velocity.x += direction * jump_horizontal_speed * delta

@@ -10,6 +10,7 @@ var weight: float
 func _ready():
 	weight = float(11 - smoothing_distance) /100
 
+
 func _physics_process(delta):
 	if player != null:
 		var camera_position: Vector2
@@ -17,5 +18,5 @@ func _physics_process(delta):
 			camera_position = lerp(global_position, player.global_position, weight)
 		else:
 			camera_position = player.global_position
-		print("Weight: ", weight, "  Camera position: ", camera_position, " - Camera Pixel Floor: ", camera_position.floor())
+		#print("Weight: ", weight, "  Camera position: ", camera_position, " - Camera Pixel Floor: ", camera_position.floor())
 		global_position = camera_position.floor()
