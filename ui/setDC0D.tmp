@@ -1,15 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://b3jd3gowglgaw"]
+[gd_scene load_steps=6 format=3 uid="uid://cvbfgn3js7j4"]
 
-[ext_resource type="Texture2D" uid="uid://4kb07lo3007c" path="res://ui/environment-preview.png" id="1_1ce3t"]
-[ext_resource type="Script" path="res://ui/pause_menu_screen.gd" id="1_v1iyx"]
-[ext_resource type="Theme" uid="uid://c2sdpep4jq32h" path="res://ui/theme/game_theme.tres" id="2_sh8c7"]
-[ext_resource type="Texture2D" uid="uid://cx37cv41thp3i" path="res://ui/player-run-4.png" id="3_7nhu1"]
-[ext_resource type="Texture2D" uid="uid://5i80iq4tcot4" path="res://ui/crab-walk-1.png" id="4_ejtsa"]
+[ext_resource type="Script" path="res://ui/settings_menu_screen.gd" id="1_50y4p"]
+[ext_resource type="Texture2D" uid="uid://4kb07lo3007c" path="res://ui/environment-preview.png" id="2_yauf8"]
+[ext_resource type="Theme" uid="uid://c2sdpep4jq32h" path="res://ui/theme/game_theme.tres" id="3_fdqap"]
+[ext_resource type="Texture2D" uid="uid://cx37cv41thp3i" path="res://ui/player-run-4.png" id="4_v804r"]
+[ext_resource type="Texture2D" uid="uid://5i80iq4tcot4" path="res://ui/crab-walk-1.png" id="5_4j0lg"]
 
-[node name="PauseMenuScreen" type="CanvasLayer"]
+[node name="SettingsMenuScreen" type="CanvasLayer"]
 process_mode = 3
 layer = 2
-script = ExtResource("1_v1iyx")
+script = ExtResource("1_50y4p")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.588235, 0.0117647, 0.717647, 1)
@@ -22,7 +22,7 @@ offset_right = 195.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_1ce3t")
+texture = ExtResource("2_yauf8")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -30,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_sh8c7")
+theme = ExtResource("3_fdqap")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -47,9 +47,11 @@ theme_override_constants/margin_bottom = 15
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Continue" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="WindowsModeOptionButton" type="OptionButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Continue"
+
+[node name="ResolutionOptionButton" type="OptionButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="MainMenu" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -57,11 +59,12 @@ text = "Main menu"
 
 [node name="Player-run-4" type="Sprite2D" parent="."]
 position = Vector2(164, 228)
-texture = ExtResource("3_7nhu1")
+texture = ExtResource("4_v804r")
 
 [node name="Crab-walk-1" type="Sprite2D" parent="."]
 position = Vector2(287, 231)
-texture = ExtResource("4_ejtsa")
+texture = ExtResource("5_4j0lg")
 
-[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="item_selected" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WindowsModeOptionButton" to="." method="_on_windows_mode_option_button_item_selected"]
+[connection signal="item_selected" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ResolutionOptionButton" to="." method="_on_resolution_option_button_item_selected"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

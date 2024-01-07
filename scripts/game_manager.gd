@@ -6,6 +6,7 @@ var pause_menu_screen: PackedScene = preload("res://ui/pause_menu.tscn")
 
 func _ready():
 	RenderingServer.set_default_clear_color(Color(0.231, 0.067, 0.345, 1.00))
+	SettingsManager.load_settings()
 
 
 func start_game():
