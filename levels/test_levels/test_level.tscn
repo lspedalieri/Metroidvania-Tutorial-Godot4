@@ -35,7 +35,6 @@ position = Vector2(309, -27)
 
 [node name="Player" parent="." index="3"]
 position = Vector2(67, -3)
-jump_count = 4
 
 [node name="EnemyCrab" parent="." index="4" node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_jsq10")]
 position = Vector2(663, -5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1slrhhh3dha6"]
+[gd_scene load_steps=8 format=3 uid="uid://d1slrhhh3dha6"]
 
 [ext_resource type="PackedScene" uid="uid://bl4a7a8x6ujy3" path="res://levels/base_level.tscn" id="1_y8eef"]
 [ext_resource type="PackedScene" uid="uid://de14atpb7kgr7" path="res://environment/parallax_background.tscn" id="2_qn08v"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://degmiepatnxqi" path="res://pickups/collectibles/blue_coin/blue_coin.tscn" id="4_3dvd2"]
 [ext_resource type="PackedScene" uid="uid://dfkg8vjis6wx4" path="res://pickups/health_pickups/health_pickup.tscn" id="4_8xwkp"]
 [ext_resource type="PackedScene" uid="uid://bp56iggj7uvq5" path="res://pickups/collectibles/green_diamond/green_diamond.tscn" id="5_lmsui"]
+[ext_resource type="PackedScene" uid="uid://dvbfqm0johc0q" path="res://levels/door/door.tscn" id="7_x5uom"]
 
 [node name="Level1" instance=ExtResource("1_y8eef")]
 
@@ -45,10 +46,15 @@ position = Vector2(229, -170)
 [node name="GreenDiamond" parent="Collectibles/GreenDiamonds" index="0" instance=ExtResource("5_lmsui")]
 position = Vector2(41, -170)
 
-[node name="Player" parent="." index="4"]
+[node name="Door" parent="." index="4" instance=ExtResource("7_x5uom")]
+position = Vector2(1660, -34)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Player" parent="." index="5"]
 position = Vector2(48, -32)
 
-[node name="Enemies" type="Node" parent="." index="5"]
+[node name="Enemies" type="Node" parent="." index="6"]
 
 [node name="EnemyCrab" parent="Enemies" index="0" node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_goap8")]
 position = Vector2(178, -146)
@@ -62,6 +68,6 @@ position = Vector2(105, -40)
 [node name="Point2" type="Marker2D" parent="Enemies/EnemyCrab/PatrolPoints" index="1"]
 position = Vector2(329, -40)
 
-[node name="PlayerCamera" parent="." index="6"]
+[node name="PlayerCamera" parent="." index="7"]
 smoothing_enabled = true
 smoothing_distance = 2

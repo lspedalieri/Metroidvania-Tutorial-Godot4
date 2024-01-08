@@ -13,7 +13,7 @@ func start_game():
 	if get_tree().paused:
 		continue_game()
 		return
-	transition_to_scene(level_1.resource_path)
+	SceneManager.transition_to_scene("Level1")
 
 
 func exit_game():
@@ -35,10 +35,4 @@ func main_menu():
 	print("main menu")
 	var main_menu_screen_instance = main_menu_screen.instantiate()
 	get_tree().get_root().add_child(main_menu_screen_instance)
-	
 
-
-func transition_to_scene(scene_path):
-	print("transition")
-	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file(scene_path)
