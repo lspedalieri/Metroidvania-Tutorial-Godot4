@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://gpfmnv351shk"]
+[gd_scene load_steps=8 format=3 uid="uid://gpfmnv351shk"]
 
 [ext_resource type="PackedScene" uid="uid://bl4a7a8x6ujy3" path="res://levels/base_level.tscn" id="1_w3yx2"]
 [ext_resource type="PackedScene" uid="uid://de14atpb7kgr7" path="res://environment/parallax_background.tscn" id="2_bmj17"]
 [ext_resource type="PackedScene" uid="uid://degmiepatnxqi" path="res://pickups/collectibles/blue_coin/blue_coin.tscn" id="3_3w50b"]
 [ext_resource type="PackedScene" uid="uid://cluqar8su7vxh" path="res://Enemies/crab/enemy_crab.tscn" id="4_jsq10"]
 [ext_resource type="PackedScene" uid="uid://bp56iggj7uvq5" path="res://pickups/collectibles/green_diamond/green_diamond.tscn" id="5_5ro8e"]
+[ext_resource type="PackedScene" uid="uid://dvbfqm0johc0q" path="res://levels/door/door.tscn" id="6_64tnr"]
+[ext_resource type="PackedScene" uid="uid://bsn6nqhkt28rm" path="res://levels/key/key.tscn" id="7_1uw0f"]
 
 [node name="TestLevel" instance=ExtResource("1_w3yx2")]
 
@@ -33,10 +35,21 @@ position = Vector2(257, -27)
 [node name="GreenDiamond" parent="Collectibles/GreenDiamonds" index="0" instance=ExtResource("5_5ro8e")]
 position = Vector2(309, -27)
 
-[node name="Player" parent="." index="3"]
+[node name="Door1" type="Node" parent="." index="3"]
+
+[node name="Key" parent="Door1" index="0" instance=ExtResource("7_1uw0f")]
+position = Vector2(387, -119)
+key_id = "12345"
+
+[node name="Door" parent="Door1" index="1" instance=ExtResource("6_64tnr")]
+position = Vector2(549, -48)
+rotation = -3.14159
+key_id = "12345"
+
+[node name="Player" parent="." index="4"]
 position = Vector2(67, -3)
 
-[node name="EnemyCrab" parent="." index="4" node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_jsq10")]
+[node name="EnemyCrab" parent="." index="5" node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_jsq10")]
 position = Vector2(663, -5)
 patrol_points = NodePath("PatrolPoints2")
 

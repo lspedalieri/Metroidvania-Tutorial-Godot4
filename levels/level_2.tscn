@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpe81266j2q74"]
+[gd_scene load_steps=6 format=3 uid="uid://bpe81266j2q74"]
 
 [ext_resource type="PackedScene" uid="uid://bl4a7a8x6ujy3" path="res://levels/base_level.tscn" id="1_vo03a"]
 [ext_resource type="PackedScene" uid="uid://de14atpb7kgr7" path="res://environment/parallax_background.tscn" id="2_wsdny"]
 [ext_resource type="PackedScene" uid="uid://bp56iggj7uvq5" path="res://pickups/collectibles/green_diamond/green_diamond.tscn" id="3_ni45s"]
 [ext_resource type="PackedScene" uid="uid://dvbfqm0johc0q" path="res://levels/door/door.tscn" id="4_dmsnf"]
+[ext_resource type="PackedScene" uid="uid://bsn6nqhkt28rm" path="res://levels/key/key.tscn" id="4_pn0s5"]
 
 [node name="Level2" instance=ExtResource("1_vo03a")]
 
@@ -31,6 +32,14 @@ limit_bottom = 80
 smoothing_enabled = true
 smoothing_distance = 2
 
-[node name="Door" parent="." index="6" instance=ExtResource("4_dmsnf")]
-position = Vector2(1536, 48)
-scale = Vector2(-1, 1)
+[node name="Door1" type="Node" parent="." index="6"]
+
+[node name="Key" parent="Door1" index="0" instance=ExtResource("4_pn0s5")]
+position = Vector2(711, -319)
+key_id = "23456"
+
+[node name="Door" parent="Door1" index="1" instance=ExtResource("4_dmsnf")]
+position = Vector2(1543, 0)
+rotation = -3.14159
+next_scene = "Level1"
+key_id = "23456"
